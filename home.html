@@ -115,7 +115,7 @@ ul.ecqm-nav li a:hover:not(.active) {
 
 </style>
 <body onload="loadIFrameOnRoute()">
-<div class="ecqm-header"><button class="ecqm-hide-large" onclick="w3_open()">&#9776;</button><img alt="logo" class="logo" src="/img/logo_dark2x.png"></div>
+<div class="ecqm-header"><button class="ecqm-hide-large" onclick="w3_open()">&#9776;</button></div>
 <div class="ecqm-bgcolor ecqm-sidebar ecqm-bar-block ecqm-collapse ecqm-card" id="mySidebar">
   <div class="ecqm-navhead">
 		<div><img alt="logo" class="logo" src="/img/logo2x.png"></div>
@@ -144,9 +144,9 @@ function w3_close() {
 }
 function loadIFrame(target) {
 	if('home' === target || 'measurelibrary' === target || 'help' === target){
-		document.getElementById("myIframe").setAttribute("src", 'http://localhost:8999/measure-library/');
+		document.getElementById("myIframe").setAttribute("src", 'https://pk-ecqm-demo.herokuapp.com/pk-ecqm-grid-angular/');
 	}else if('testlibrary' === target){
-		document.getElementById("myIframe").setAttribute("src", 'http://localhost:8999/test-library/');
+		document.getElementById("myIframe").setAttribute("src", 'https://pk-ecqm-demo.herokuapp.com/pk-bonnie-library-react/');
 	}
 }
 function loadIFrameOnRoute() {
