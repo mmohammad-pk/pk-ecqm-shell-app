@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<title>eCQM</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+html,body{font-family:Verdana,sans-serif;font-size:15px;line-height:1.5;height: 100%; background-color:#fafafa;margin: 0;}
+iframe { height: 100%; }
+.ecqm-sidebar{height:100%;width:100px;background-color:#fff;position:fixed!important;z-index:1;top:0;overflow:auto}
+.ecqm-sidebar{height:100%;width:14%;position:absolute;z-index:999;box-shadow: 0px 4px 5px -2px rgba(0, 0, 0, 0.2), 0px 7px 10px 1px rgba(0, 0, 0, 0.14), 0px 2px 16px 1px rgba(0, 0, 0, 0.12);}
+@media (min-width:993px){.ecqm-modal-content{width:900px}.ecqm-hide-large{display:none!important} .ecqm-content-mobile{margin-left: 0% !important;} .ecqm-sidebar.ecqm-collapse{display:block!important;width:14%;left: -10.5%;transition: 0.3s;} .ecqm-sidebar:hover {left: 0;}}
+@media (max-width:992px){.ecqm-sidebar.ecqm-collapse{display:none}.ecqm-main{margin-left:0!important;margin-right:0!important} .ecqm-content-mobile{margin-left: 0% !important;}}
+.ecqm-bgcolor{background-color: #2c2f3b;}
+
+ul.ecqm-nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 14%;
+    background-color: #303441;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+ul.ecqm-nav li a {
+    display: table;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 2% 1% 2% 18%;
+    text-decoration: none;
+}
+
+ul.ecqm-nav li span {
+	vertical-align: middle;
+}
+
+ul.ecqm-nav li a svg {
+    display: inline !important;
+    width: 16%  !important;
+    height: 16%  !important;
+	fill : rgba(255, 255, 255, 0.5);
+	background : #575e75;
+	border-radius: 50%;
+	vertical-align: bottom;
+	float: right;
+	margin-right: 6%;
+	
+}
+
+ul.ecqm-nav li a:hover svg {
+	fill : #fff;
+	
+}
+ 
+ul.ecqm-nav li a.active {
+    background-color: #2c2f3b;
+    color: rgba(255, 255, 255, 0.3);
+	font-size: 11px;
+	font-weight: 500;
+	font-family : 'Montserrat', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+}
+
+ul.ecqm-nav li a:hover:not(.active) {
+    background-color: #2c2f3b;
+    color: white;
+}
+
+#nav-heading {
+    display: block;
+    padding: 4.4% 1% 4.4% 18%;
+    text-decoration: none;
+    background-color: #2c2f3b;
+    color: rgba(255, 255, 255, 0.3);
+	font-size: 15px;
+	font-weight: 500;
+	font-family : 'Montserrat', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+}
+
+
+#ecqm-content {
+    margin-left: 5%;
+    padding: 25px 2px;
+	position: relative;
+    width: 95%;
+    height: 90%;
+}
+.ecqm-header > img {
+	margin-left: 5%;
+	height: 25px;
+    padding: 22px 2px;
+}
+.ecqm-header {
+	position: relative;
+     width: 100%;
+     height: 64px;
+	 background-color: #fff;
+	 border-bottom : 1px;
+	 z-index: 500;
+	 box-shadow:0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
+}
+
+.ecqm-navhead {
+	width : 100%;
+}
+
+.ecqm-navhead > div{
+	width : 80%;
+	margin: 8% 0% 8% 14%;
+}
+
+.ecqm-navhead > div > img{
+	width : 50%;
+}
+
+
+</style>
+<body onload="loadIFrameOnRoute()">
+<div class="ecqm-header"><button class="ecqm-hide-large" onclick="w3_open()">&#9776;</button><img alt="logo" class="logo" src="/img/logo_dark2x.png"></div>
+<div class="ecqm-bgcolor ecqm-sidebar ecqm-bar-block ecqm-collapse ecqm-card" id="mySidebar">
+  <div class="ecqm-navhead">
+		<div><img alt="logo" class="logo" src="/img/logo2x.png"></div>
+	</div>
+  	<div class="ecqm-navbody">
+		<ul class="ecqm-nav">
+		  <li><a id="nav-heading">NAVIGATION</a></li>
+		  <li><a href="#home" onclick="loadIFrame('home')"><span>Home</span><span><svg viewBox="-12 -13 50 48" preserveAspectRatio="xMidYMid meet" class="style-scope iron-icon" style="pointer-events: none; display: block; width: 100%; height: 100%;"><g class="style-scope iron-icon"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" class="style-scope iron-icon"></path></g></svg></span></a></li>
+		  <li><a href="#measurelibrary" onclick="loadIFrame('measurelibrary')"><span>Measure Library</span><span><svg viewBox="-12 -13 50 48" preserveAspectRatio="xMidYMid meet" class="style-scope iron-icon" style="pointer-events: none;display: block;/* width: 100%; *//* height: 100%; */"><g class="style-scope iron-icon"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z" class="style-scope iron-icon"></path></g></svg></span></a></li>
+		  <li><a href="#testlibrary" onclick="loadIFrame('testlibrary')"><span>Test Library</span><span><svg viewBox="-12 -13 50 48" preserveAspectRatio="xMidYMid meet" class="style-scope iron-icon" style="pointer-events: none; display: block; width: 100%; height: 100%;"><g class="style-scope iron-icon"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z" class="style-scope iron-icon"></path></g></svg></span></a></li>
+		</ul>
+	</div>
+</div>
+
+
+<div onclick="w3_close()" class="" id="ecqm-content">
+   <iframe id="myIframe" scrolling="no" width="100%" frameborder="0" class="video"  src="about:blank" ></iframe>
+</div>
+
+<script type="application/javascript">
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+}
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+}
+function loadIFrame(target) {
+	if('home' === target || 'measurelibrary' === target || 'help' === target){
+		document.getElementById("myIframe").setAttribute("src", 'http://localhost:8999/measure-library/');
+	}else if('testlibrary' === target){
+		document.getElementById("myIframe").setAttribute("src", 'http://localhost:8999/test-library/');
+	}
+}
+function loadIFrameOnRoute() {
+	loadIFrame('home');
+}
+
+function bindEvent(element, eventName, eventHandler) {
+	if (element.addEventListener){
+		element.addEventListener(eventName, eventHandler, false);
+	} else if (element.attachEvent) {
+		element.attachEvent('on' + eventName, eventHandler);
+	}
+}
+
+bindEvent(window, 'message', function (e) {
+	if(e.origin === window.origin && e.data === 'login'){
+		window.location.href = window.origin+'/login';
+	}
+});
+</script>
+     
+</body>
+</html>
