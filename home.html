@@ -145,8 +145,10 @@ function w3_close() {
 function loadIFrame(target) {
 	if('home' === target || 'measurelibrary' === target || 'help' === target){
 		document.getElementById("myIframe").setAttribute("src", 'https://pk-ecqm-demo.herokuapp.com/pk-ecqm-grid-angular/');
+		// document.getElementById("myIframe").setAttribute("src", 'http://localhost:8999/pk-ecqm-grid-angular/');
 	}else if('testlibrary' === target){
 		document.getElementById("myIframe").setAttribute("src", 'https://pk-ecqm-demo.herokuapp.com/pk-bonnie-library-react/');
+		// document.getElementById("myIframe").setAttribute("src", 'http://localhost:8999/pk-bonnie-library-react/');
 	}
 }
 function loadIFrameOnRoute() {
