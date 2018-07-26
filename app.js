@@ -5,6 +5,10 @@ var session = require('express-session');
 var port = process.env.PORT || 8999;
 var app = express();
 
+process.on('uncaughtException', function (err) {
+    console.log(err);
+});
+
 function checkAuth (req, res, next) {
 	// don't serve to those not logged in
 	if(req.url !== '/' && req.url !== '/unauthorised' && req.url.indexOf('/login') == -1 && req.url.indexOf('/pk-login-react/') == -1 && (!req.session || !req.session.authenticated)) {
