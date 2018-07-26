@@ -2,15 +2,15 @@ var express = require('express');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
-var port = process.env.PORT || 8999;
+var port = 8999;
 var app = express();
 
 function checkAuth (req, res, next) {
 	// don't serve to those not logged in
-	if(req.url !== '/' && req.url !== '/unauthorised' && req.url !== '/login' && (!req.session || !req.session.authenticated)) {
+	if(req.url !== '/' && req.url !== '/unauthorised' && req.url.indexOf('/login') == -1 && req.url.indexOf('/pk-login-react/') == -1 && (!req.session || !req.session.authenticated)) {
 		console.log('Authentication Failed - '+req.url);
 		res.redirect('/unauthorised');
-	}else if(req.url === '/' && (!req.session || !req.session.authenticated)) {
+	}else if(req.url === '/' && req.url.indexOf('/pk-login-react/') == -1 && (!req.session || !req.session.authenticated)) {
 		res.redirect('/login');
 	}else{
 		next();
