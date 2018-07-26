@@ -2,7 +2,7 @@ var express = require('express');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
-var port = 8999;
+var port = process.env.PORT || 8999;
 var app = express();
 
 function checkAuth (req, res, next) {
