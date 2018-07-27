@@ -1,0 +1,19 @@
+{
+  "name": "pk-ecqm-shell-app",
+  "description": "Shell App for Micro Front End Architecture",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "consolidate": "^0.15.1",
+    "cookie-parser": "^1.4.3",
+    "express": "4.16.3",
+    "express-session": "^1.15.6",
+    "http-proxy": "^1.17.0",
+    "jade": "0.20.x",
+    "mime": "^1.6.0"
+  },
+  "devDependencies": {}
+}
